@@ -4,8 +4,6 @@
 
 FROM golang:1.22.2-bookworm AS builder
 
-ENV CGO_ENABLED=0
-
 ARG TARGETOS
 ARG TARGETARCH
 ARG COMMIT
