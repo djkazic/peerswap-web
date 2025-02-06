@@ -31,6 +31,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: New builder
+        run: |
+          docker buildx create --use --name newbuilder 
     
       - name: Check buildkit version
         run: |
