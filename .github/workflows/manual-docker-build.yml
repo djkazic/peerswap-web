@@ -34,7 +34,8 @@ jobs:
 
       - name: New builder
         run: |
-          docker buildx create --use --name newbuilder 
+          docker run --privileged --rm tonistiigi/binfmt --install all
+          docker buildx create --use --name newbuilder
     
       - name: Check buildkit version
         run: |
