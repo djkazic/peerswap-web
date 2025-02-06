@@ -14,6 +14,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN go env
+
 RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} make -j1 install-lnd && \
     git clone https://github.com/ElementsProject/peerswap.git && \
     cd peerswap && \
