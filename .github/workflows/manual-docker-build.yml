@@ -39,7 +39,7 @@ jobs:
       - name: Build and Push Docker image
         run: |
           docker buildx build \
-          --platform linux/arm64,linux/amd64 \
+          --platform linux/arm64 \
           --tag ghcr.io/impa10r/peerswap-web:${{ github.event.inputs.version }} \
           --tag ghcr.io/impa10r/peerswap-web:latest \
           --output "type=registry" \
