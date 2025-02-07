@@ -20,8 +20,7 @@ RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} make -j1 install-lnd && \
 
 FROM debian:bookworm-slim
 
-RUN sed -i 's|$|deb http://deb.debian.org/debian bookworm main contrib non-free|' /etc/apt/sources.list && \
-    apt-get update && apt-get install -y supervisor ca-certificates && \
+RUN apt-get update && apt-get install -y supervisor ca-certificates && \
     mkdir -p /var/log/supervisor
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
