@@ -20,7 +20,7 @@ RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} make -j1 install-lnd && \
     git checkout $COMMIT && \
     make -j1 lnd-release
 
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
 RUN sed -i 's|$|deb http://deb.debian.org/debian buster main contrib non-free|' /etc/apt/sources.list && \
     apt-get update && apt-get install -y supervisor ca-certificates && \
