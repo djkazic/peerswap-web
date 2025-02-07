@@ -36,7 +36,7 @@ jobs:
         run: |
           docker buildx build \
           --platform linux/arm64,linux/amd64 \
-          --tag ghcr.io/impa10r/peerswap-web:${{ github.event.inputs.version }} \
-          --tag ghcr.io/impa10r/peerswap-web:latest \
+          --tag ghcr.io/djkazic/peerswap-web:${{ github.event.inputs.version }} \
+          --tag ghcr.io/djkazic/peerswap-web:latest \
           --output "type=registry" \
           .
